@@ -1,5 +1,22 @@
 <?php include('includes/header.php'); ?>
-<div class="container mt-5">
+<div class="container mt-5 position-relative">
+  <!-- Carte de prestige à gauche, isolée -->
+  <div class="prestige-card position-absolute top-0 start-0 mt-2 ms-2 d-none d-lg-block" style="z-index:10; left:-100px;">
+    <div class="card shadow rounded-4 p-3 text-center" style="min-width:260px; background:rgba(255,255,255,0.95);">
+      <img src="assets/img/hugo.jpg" alt="Photo de profil" class="rounded-circle mb-2" style="width:80px; height:80px; object-fit:cover; border:3px solid #fbc02d;">
+      <h5 class="fw-bold mb-1">Bertagna Hugo</h5>
+      <div class="text-muted mb-1">Étudiant Ingénieur Cybersécurité</div>
+      <a href="mailto:hugo.bertagna@cpe.fr" class="d-block mb-2" style="color:#1a237e; text-decoration:none;">
+        <i class="fas fa-envelope"></i> hugo.bertagna@cpe.fr
+      </a>
+      <div>
+        <a href="https://www.linkedin.com/in/hugo-bertagna-aa6768311/" target="_blank" class="me-2" style="color:#0a66c2;"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="https://github.com/hugobertagna" target="_blank" style="color:#232323;"><i class="fab fa-github fa-lg"></i></a>
+      </div>
+    </div>
+  </div>
+  <!-- Fin carte de prestige -->
+
   <div class="row justify-content-center text-center">
     <div class="col-lg-8">
       <h1 class="display-5 fw-bold mb-4">Bienvenue sur mon portfolio</h1>

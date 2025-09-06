@@ -8,9 +8,9 @@ html, body {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #e3edf7, #f6f9fc);
-  background-attachment: fixed;
-  color: #2c3e50;
+  /* Light mode : dégradé jaune vers bleu */
+  background: linear-gradient(120deg, #fbc02d 0%, #fffde7 60%, #1a237e 100%);
+  color: #232323;
   padding-top: 120px;
   transition: background 0.6s ease, color 0.6s ease;
   min-height: 100vh;
@@ -18,8 +18,32 @@ body {
   flex-direction: column;
 }
 
+.container {
+  flex: 1 0 auto;
+  padding-bottom: 0 !important;
+  background: transparent !important;
+}
+
+.row, .col-12 {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 footer {
   margin-top: auto;
+  background: #0d1333 !important;
+  color: #fbc02d !important;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -8px 20px rgba(0,0,0,0.18);
+  padding: 1.8rem 0;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Navbar centrée sur une ligne */
@@ -28,7 +52,7 @@ footer {
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #2b2d42;
+  background-color: #0d1333;
   backdrop-filter: blur(10px);
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -54,7 +78,7 @@ footer {
 .navbar-brand {
   font-weight: 700;
   font-size: 1.2rem;
-  color: #f8f9fa;
+  color: #fbc02d !important;
 }
 
 .navbar-brand img {
@@ -79,7 +103,7 @@ footer {
 
 .nav-link {
   font-weight: 500;
-  color: #f8f9fa;
+  color: #fbc02d !important;
   text-decoration: none;
   padding: 6px 12px;
   border-radius: 20px;
@@ -87,14 +111,14 @@ footer {
 }
 
 .nav-link:hover {
-  background-color: #ff9800;
-  color: white;
+  background-color: #fbc02d !important;
+  color: #0d1333 !important;
 }
 
 /* Boutons à droite */
 #themeToggle, #langSwitch {
   font-weight: 500;
-  color: #f8f9fa;
+  color: #fbc02d !important;
   background: transparent;
   border: none;
   padding: 6px 12px;
@@ -104,8 +128,8 @@ footer {
 }
 
 #themeToggle:hover, #langSwitch:hover {
-  background-color: #ff9800;
-  color: white;
+  background-color: #fbc02d !important;
+  color: #0d1333 !important;
   transform: scale(1.1);
 }
 
@@ -115,7 +139,8 @@ footer {
 
 /* Certificat Card */
 .certif-card {
-  background: #fff;
+  background: #fffde7;
+  border: 2px solid #fbc02d;
   border-radius: 18px;
   box-shadow: 0 4px 18px rgba(44,62,80,0.08);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -144,6 +169,34 @@ footer {
   margin-top: 10px;
 }
 
+/* Project Card */
+.project-card {
+  min-height: 520px;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 2px solid #fbc02d;
+  transition: box-shadow 0.2s;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+}
+
+.project-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+  transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.18);
+  box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+  z-index: 2;
+}
+
 /* Compétences */
 .competences {
   display: flex;
@@ -153,11 +206,11 @@ footer {
 }
 
 .competence-badge {
-  background: #ff9800;
-  color: #fff;
+  background: #1a237e;
+  color: #fbc02d;
   border-radius: 12px;
   padding: 4px 14px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   display: inline-block;
   margin-bottom: 4px;
@@ -165,7 +218,21 @@ footer {
 }
 
 .competence-badge:hover {
-  background: #e65100;
+  background: #3949ab;
+  color: #fffde7;
+}
+
+/* Prestige Card */
+.prestige-card {
+  z-index: 10;
+  left: -250px !important;
+  top: -150px !important;
+}
+
+@media (max-width: 991px) {
+  .prestige-card {
+    display: none !important;
+  }
 }
 
 /* Responsive */
@@ -174,6 +241,7 @@ footer {
     flex-direction: column;
     gap: 10px;
     padding: 0.8rem 1rem;
+    background-color: #0d1333;
   }
   .navbar-left {
     flex-wrap: wrap;
@@ -193,26 +261,49 @@ footer {
 
 /* Dark Mode */
 body.dark-mode {
-  background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
-  color: #e0e0e0;
+  /* Dark mode : dégradé bleu vers jaune */
+  background: linear-gradient(120deg, #1a237e 0%, #3949ab 60%, #fbc02d 100%);
+  color: #ffe082;
 }
 
 body.dark-mode .navbar {
-  background-color: #1a1a2a;
+  background-color: #23233a;
 }
 
 body.dark-mode .navbar-brand,
 body.dark-mode .nav-link,
 body.dark-mode #themeToggle,
 body.dark-mode #langSwitch {
-  color: #f1f1f1;
+  color: #ffe082 !important;
 }
 
 body.dark-mode .nav-link:hover,
 body.dark-mode #langSwitch:hover,
 body.dark-mode #themeToggle:hover {
-  background-color: #ffd700;
-  color: #1e1e2f;
+  background-color: #ffe082 !important;
+  color: #23233a !important;
+}
+
+body.dark-mode footer {
+  background: #23233a !important;
+  color: #ffe082 !important;
+  box-shadow: 0 -8px 20px rgba(44,62,80,0.22);
+}
+
+body.dark-mode .certif-card,
+body.dark-mode .school-card {
+  background: #23233a;
+  border-color: #b28704;
+}
+
+body.dark-mode .competence-badge {
+  background: #ffe082;
+  color: #23233a;
+}
+
+body.dark-mode .competence-badge:hover {
+  background: #b28704;
+  color: #fffde7;
 }
 
 .school-logo {
