@@ -1,0 +1,223 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Base */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e3edf7, #f6f9fc);
+  background-attachment: fixed;
+  color: #2c3e50;
+  padding-top: 120px;
+  transition: background 0.6s ease, color 0.6s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Navbar centrée sur une ligne */
+.navbar {
+  position: fixed; /* Change ici */
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2b2d42;
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  max-width: 95%;
+  gap: 24px;
+  flex-wrap: nowrap;
+  min-height: 64px;
+  height: 64px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #f8f9fa;
+}
+
+.navbar-brand img {
+  height: 72px;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+  margin-top: -10px; /* Pour centrer verticalement si besoin */
+  margin-bottom: -10px;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  gap: 1rem;
+}
+
+.navbar-nav li {
+  display: inline;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #f8f9fa;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #ff9800;
+  color: white;
+}
+
+/* Boutons à droite */
+#themeToggle, #langSwitch {
+  font-weight: 500;
+  color: #f8f9fa;
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#themeToggle:hover, #langSwitch:hover {
+  background-color: #ff9800;
+  color: white;
+  transform: scale(1.1);
+}
+
+#themeToggle i {
+  font-size: 1.2rem;
+}
+
+/* Certificat Card */
+.certif-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(44,62,80,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.certif-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(44,62,80,0.15);
+}
+
+.certif-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+}
+
+.certif-desc {
+  font-size: 0.98rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Compétences */
+.competences {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.competence-badge {
+  background: #ff9800;
+  color: #fff;
+  border-radius: 12px;
+  padding: 4px 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 4px;
+  transition: background 0.2s;
+}
+
+.competence-badge:hover {
+  background: #e65100;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+  }
+  .navbar-left {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .navbar-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .certif-card {
+    min-height: 320px;
+    padding: 2rem 1rem;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c3c);
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #1a1a2a;
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link,
+body.dark-mode #themeToggle,
+body.dark-mode #langSwitch {
+  color: #f1f1f1;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode #langSwitch:hover,
+body.dark-mode #themeToggle:hover {
+  background-color: #ffd700;
+  color: #1e1e2f;
+}
+
+.school-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
